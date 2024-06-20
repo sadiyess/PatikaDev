@@ -1,0 +1,32 @@
+Insertion Sort Aşamaları
+Verilen dizi: [22, 27, 16, 2, 18, 6]
+
+İlk eleman zaten sıralı kabul edilir: [22, 27, 16, 2, 18, 6]
+İkinci eleman sıralanır: [22, 27, 16, 2, 18, 6] -> 27 zaten 22'den büyük, değişiklik yok.
+Üçüncü eleman sıralanır:
+16, 27'den küçük, 27'nin önüne gelir: [22, 16, 27, 2, 18, 6]
+16, 22'den küçük, 22'nin önüne gelir: [16, 22, 27, 2, 18, 6]
+Dördüncü eleman sıralanır:
+2, 27'den küçük, 27'nin önüne gelir: [16, 22, 2, 27, 18, 6]
+2, 22'den küçük, 22'nin önüne gelir: [16, 2, 22, 27, 18, 6]
+2, 16'dan küçük, 16'nın önüne gelir: [2, 16, 22, 27, 18, 6]
+Beşinci eleman sıralanır:
+18, 27'den küçük, 27'nin önüne gelir: [2, 16, 22, 18, 27, 6]
+18, 22'den küçük, 22'nin önüne gelir: [2, 16, 18, 22, 27, 6]
+Altıncı eleman sıralanır:
+6, 27'den küçük, 27'nin önüne gelir: [2, 16, 18, 22, 6, 27]
+6, 22'den küçük, 22'nin önüne gelir: [2, 16, 18, 6, 22, 27]
+6, 18'den küçük, 18'in önüne gelir: [2, 16, 6, 18, 22, 27]
+6, 16'dan küçük, 16'nın önüne gelir: [2, 6, 16, 18, 22, 27]
+Sonuç olarak sıralı dizi: [2, 6, 16, 18, 22, 27]
+
+Insertion Sort'un Big-O gösterimi: O(n^2)
+
+Time Complexity 18 sayısı sıralandıktan sonra [2, 6, 16, 18, 22, 27] dizisinde ortada bulunuyor.
+Bu nedenle 18 sayısı Average case kapsamına girer.
+
+Selection Sort İlk 4 Adım -> Verilen dizi: [7, 3, 5, 8, 2, 9, 4, 15, 6]
+1.Adım: En küçük eleman 2, yer değiştirir: [2, 3, 5, 8, 7, 9, 4, 15, 6]
+2.Adım: Kalan elemanlar içinde en küçük eleman 3, zaten doğru yerde: [2, 3, 5, 8, 7, 9, 4, 15, 6]
+3.Adım: Kalan elemanlar içinde en küçük eleman 4, yer değiştirir: [2, 3, 4, 8, 7, 9, 5, 15, 6]
+4.Adım: Kalan elemanlar içinde en küçük eleman 5, yer değiştirir: [2, 3, 4, 5, 7, 9, 8, 15, 6]
