@@ -57,43 +57,70 @@ N and M are integers within the range [1..100,000];
 each element of array A is an integer within the range [1..N + 1].
      */
     public static void main(String[] args) {
-        int N=0;
-        int[] A={3,2,2,4,2};
-            int[] counters = new int[N]; // N adet sayaç
-            int max = 0; // Şu ana kadarki maksimum sayaç değeri
-            int base = 0; // max counter sonrası kullanılacak minimum taban değeri
+        int N = 5;
+        int[] A = {6, 4, 4, 6, 1, 4, 4};
 
-            for (int k = 0; k < A.length; k++) {
-                if (A[k] >= 1 && A[k] <= N) {
-                    // Sayaç artırma işlemi
-                    int index = A[k] - 1; // Diziler 0-indeksli olduğundan, 1-indeksli değeri 0-indekse çeviriyoruz
 
-                    // Eğer sayaç base değerinden küçükse, onu base'e eşitliyoruz
-                    if (counters[index] < base) {
-                        counters[index] = base;
+        int arr[] = new int[N];
+
+
+        for (Integer num : A) {
+
+            if (num >= 1 && num <= N) {
+                arr[num - 1]++;
+
+            } else if (num == N + 1) {
+                int cM = arr[0];
+
+                for (int i = 0; i < arr.length; i++) {
+                    if (cM < arr[i]) {
+                        cM = arr[i];
                     }
 
-                    // Şimdi sayacı 1 artırıyoruz
-                    counters[index]++;
-
-                    // En yüksek sayaç değerini güncelliyoruz
-                    if (counters[index] > max) {
-                        max = counters[index];
-                    }
-                } else if (A[k] == N + 1) {
-                    // max counter işlemi: base değerini şu anki max değere ayarlıyoruz
-                    base = max;
+                }
+                for (int i = 0; i < arr.length; i++) {
+                    arr[i] = cM;
                 }
             }
-
-            // İşlemler tamamlandıktan sonra sayaçların güncel olup olmadığını kontrol ediyoruz
-            for (int i = 0; i < N; i++) {
-                if (counters[i] < base) {
-                    counters[i] = base;
-                }
-            }
-
-            System.out.println(Arrays.toString(counters));
         }
 
+        System.out.println(Arrays.toString(arr));
+
+    }
 }
+/*
+class Solution {
+    public int[] solution(int N, int[] A) {
+        // Implement your solution here
+        // you can also use imports, for example:
+// import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+              int arr [] = new int[N];
+
+
+        for(Integer num : A){
+
+            if(num >= 1 && num<= N){
+                arr[num-1]++;
+
+            }else if(num == N+1){
+                int cM=arr[0];
+
+                for(int i=0; i<arr.length;i++){
+                  if(cM<arr[i]){
+                      cM=arr[i];
+                  }
+
+                }
+              for (int i = 0; i < arr.length; i++) {
+    arr[i] = cM;
+}
+            }
+        }
+
+        return arr;
+    }
+}
+ */
